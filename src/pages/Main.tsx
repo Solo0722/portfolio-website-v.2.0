@@ -6,6 +6,7 @@ import Projects from "../containers/projects";
 import Blogs from "../containers/blogs";
 import Contact from "../containers/contact";
 import Services from "../containers/services";
+import Experience from "../containers/experience";
 
 const Main = () => {
   return (
@@ -14,6 +15,10 @@ const Main = () => {
       <Home />
       <Services />
       <About />
+      <Experience />
+      <Projects />
+      <Blogs />
+      <Contact />
     </>
   );
 };

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import heroImg from "../assets/images/man.png";
 import { defaultTheme } from "../theme/appTheme";
 import { Button } from "antd";
+import { socialMedia } from "../utils/data";
 
 const Home = () => {
   return (
@@ -11,15 +12,22 @@ const Home = () => {
         <DescriptionWrapper>
           <small>Hey there, I'm</small>
           <h1>Solomon Owusu-Ansah</h1>
-          <p className="desc" style={{ color: `${defaultTheme.primaryColor}` }}>
-            A frontend software developer
+          <p className="desc" style={{ color: "rgba(230, 230, 255, 0.5)" }}>
+            A frontend software developer with intermediate knowledge in backend
+            development. I create beautiful designs only.
           </p>
-          <p className="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-            maxime minima deserunt nesciunt praesentium corrupti et magnam aut
-            harum? Reiciendis eius voluptatem inventore numquam dignissimos
-            labore distinctio veritatis excepturi quisquam.
-          </p>
+          <ButtonsWrapper>
+            {socialMedia.map((lk) => (
+              <Button
+                href={lk.link}
+                target="_blank"
+                type="default"
+                icon={lk.icon}
+                className="social-media-btn"
+                key={lk.name}
+              />
+            ))}
+          </ButtonsWrapper>
         </DescriptionWrapper>
         <HeroImageWrapper>
           <img src={heroImg} alt="" />
@@ -68,14 +76,31 @@ const DescriptionWrapper = styled.div`
     font-weight: 400;
     padding: 0.5rem;
     width: 20%;
-    background-color: ${defaultTheme.primaryPalette[800]};
+    background-color: ${defaultTheme.primaryPalette[500]};
   }
 
   .desc {
     font-weight: 400;
     font-size: 0.85rem;
-    margin: 0.5rem 0;
+    margin: 1rem 0;
     width: 90%;
+  }
+`;
+
+const ButtonsWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+
+  & .social-media-btn {
+    box-shadow: none;
+    color: rgba(230, 230, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
   }
 `;
 

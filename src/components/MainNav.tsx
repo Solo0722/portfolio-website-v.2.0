@@ -9,7 +9,7 @@ const MainNav = () => {
       <LogoWrapper>
         <p>oasolomon.</p>
       </LogoWrapper>
-      <LinksWrapper>
+      <LinksWrapper className="highlightTextIn">
         <ul>
           <li>
             <p>Home</p>
@@ -71,6 +71,7 @@ const LogoWrapper = styled.div`
     color: ${defaultTheme.primaryColor};
   }
 `;
+
 const LinksWrapper = styled.div`
   ul {
     list-style-type: none;

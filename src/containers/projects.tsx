@@ -5,7 +5,7 @@ import TitleBar from "../components/TitleBar";
 const Projects = () => {
   return (
     <ProjectsWrapper>
-      <TitleBar title="Projects I have worked on" number={2} />
+      <TitleBar title="Projects I have worked on"/>
     </ProjectsWrapper>
   );
 };

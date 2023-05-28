@@ -8,12 +8,7 @@ import { skillsets } from "../utils/data";
 const About = () => {
   return (
     <AboutWrapper>
-      <AboutHeader>
-        <h2>About</h2>
-        <p style={{ color: `${defaultTheme.primaryColor}` }}>
-          Let me tell you an interesting thing about me
-        </p>
-      </AboutHeader>
+      <TitleBar title="About me" />
       <AboutBody>
         <AboutDescription>
           <p>
@@ -60,7 +55,7 @@ const About = () => {
 
 const AboutWrapper = styled.section`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 6rem;
 
   & p,
@@ -77,6 +72,22 @@ const AboutHeader = styled.div`
   h2 {
     font-family: "Lobster Two", "Montserrat", sans-serif;
     margin: 1rem 0;
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+  h2::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: 0px;
+    width: 300px;
+    height: 1px;
+    margin-left: 10px;
+    background-color: rgba(230, 230, 255, 0.5);
   }
 `;
 

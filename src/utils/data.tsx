@@ -1,3 +1,27 @@
+import styled from "styled-components";
+
+export const ExperienceBox = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const socialMedia = [
+  {
+    name: "LinkedIn",
+    link: "https://linkedin.com/in/solomon-owusu-ansah-a68668223",
+    icon: <ion-icon name="logo-linkedin"></ion-icon>,
+  },
+  {
+    name: "Github",
+    link: "https://github.com/solo0722",
+    icon: <ion-icon name="logo-github"></ion-icon>,
+  },
+  {
+    name: "Twitter",
+    link: "https://twitter.com/@KhobbySolo",
+    icon: <ion-icon name="logo-twitter"></ion-icon>,
+  },
+];
 export const servicesData = [
   {
     image: <ion-icon name="trophy-outline"></ion-icon>,
@@ -56,5 +80,56 @@ export const skillsets = [
     name: "",
     image:
       "https://www.nicepng.com/png/detail/222-2224770_react-native-icon-png.png",
+  },
+];
+
+export const experienceData = [
+  {
+    children: (
+      <ExperienceBox>
+        <p>
+          (Remote Work - Internship) Frontend developer Intern, JLS Trading Co.
+          USA
+        </p>
+        <p>
+          Worked as an intern where I worked on fixing bugs in the console and
+          on the responsiveness of the application. I also contributed to the
+          creation of other important components in the application.
+        </p>
+        <p>November 2022 - January 2022</p>
+      </ExperienceBox>
+    ),
+  },
+  {
+    children: (
+      <ExperienceBox>
+        <p>
+          (Remote Work - Internship) Frontend developer Intern, JLS Trading Co.
+          USA
+        </p>
+        <p>
+          Worked as an intern where I worked on fixing bugs in the console and
+          on the responsiveness of the application. I also contributed to the
+          creation of other important components in the application.
+        </p>
+        <p>November 2022 - January 2022</p>
+      </ExperienceBox>
+    ),
+  },
+  {
+    children: (
+      <ExperienceBox>
+        <p>
+          (Remote Work - Internship) Frontend developer Intern, JLS Trading Co.
+          USA
+        </p>
+        <p>
+          Worked as an intern where I worked on fixing bugs in the console and
+          on the responsiveness of the application. I also contributed to the
+          creation of other important components in the application.
+        </p>
+        <p>November 2022 - January 2022</p>
+      </ExperienceBox>
+    ),
   },
 ];

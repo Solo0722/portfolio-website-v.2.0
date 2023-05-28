@@ -4,10 +4,9 @@ import styled from "styled-components";
 
 export interface IProps {
   title: string;
-  number: number;
 }
 
-const TitleBar = ({ title, number }: IProps) => {
+const TitleBar = ({ title }: IProps) => {
   return (
     <TitleWrapper>
       <h2>{title}</h2>
@@ -16,35 +15,24 @@ const TitleBar = ({ title, number }: IProps) => {
 };
 
 const TitleWrapper = styled.div`
-  & h2 {
-    color: ${defaultTheme.primaryColor};
-    font-size: 1rem;
-    font-family: "Zilla Slab";
-    font-weight: normal;
+  h2 {
+    font-family: "Lobster Two", "Montserrat", sans-serif;
+    margin: 1rem 0;
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    position: relative;
-    margin: 10px 0px 40px;
-    width: 100%;
-    white-space: nowrap;
   }
-
-  & h2::before {
-    position: relative;
-    bottom: 0px;
-    counter-increment: section 1;
-    content: "0" counter(div) ".";
-    margin-right: 10px;
-  }
-  & h2::after {
+  h2::after {
     content: "";
     display: block;
     position: relative;
     top: 0px;
     width: 300px;
     height: 1px;
-    margin-left: 20px;
+    margin-left: 10px;
     background-color: rgba(230, 230, 255, 0.5);
   }
 `;
