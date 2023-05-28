@@ -15,8 +15,10 @@ body {
   width: 100%;
   height: 100%;
   background-color:${defaultTheme.black};
-  color:${defaultTheme.accentColor};
-  font-family: 'Poppins', sans-serif;
+  color:${defaultTheme.white};
+  font-family: 'Montserrat', sans-serif;
+  font-variant:normal;
+  font-weight:400;
   transition:all 0.20s linear;
   scroll-behavior:smooth;
   overflow-x:hidden;

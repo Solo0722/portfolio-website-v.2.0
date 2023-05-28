@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import heroImg from "../assets/images/img.jpg";
+import heroImg from "../assets/images/man.png";
 import { defaultTheme } from "../theme/appTheme";
 import { Button } from "antd";
 
@@ -10,19 +10,16 @@ const Home = () => {
       <ContentWrapper>
         <DescriptionWrapper>
           <small>Hey there, I'm</small>
-          <h1>
-            Solomon <br />
-            Owusu-Ansah
-          </h1>
-          <p className="desc">A frontend software developer</p>
-          <ButtonsWrapper>
-            <button className="css-button-sliding-to-left--black">
-              View my work
-            </button>
-            <button className="css-button-sliding-to-left--black">
-              Download Resume
-            </button>
-          </ButtonsWrapper>
+          <h1>Solomon Owusu-Ansah</h1>
+          <p className="desc" style={{ color: `${defaultTheme.primaryColor}` }}>
+            A frontend software developer
+          </p>
+          <p className="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
+            maxime minima deserunt nesciunt praesentium corrupti et magnam aut
+            harum? Reiciendis eius voluptatem inventore numquam dignissimos
+            labore distinctio veritatis excepturi quisquam.
+          </p>
         </DescriptionWrapper>
         <HeroImageWrapper>
           <img src={heroImg} alt="" />
@@ -34,12 +31,12 @@ const Home = () => {
 
 const HomeWrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 80px);
   position: relative;
 `;
 
 const ContentWrapper = styled.div`
-  padding: 6rem;
+  padding: 0 6rem;
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -52,79 +49,44 @@ const ContentWrapper = styled.div`
 
 const DescriptionWrapper = styled.div`
   width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   & h1 {
     font-weight: 800;
-    font-size: 4rem;
-    line-height: 4rem;
+    font-size: 3.5rem;
+    font-stretch: ultra-condensed;
+    line-height: 3.5rem;
     margin: 1rem 0;
-    font-family: "Zilla Slab", "LibreBaskerville";
-    color: ${defaultTheme.primaryColor};
+    font-family: "Lobster Two", "Montserrat", sans-serif;
   }
 
   & small {
     /* margin: 1.5rem 0; */
-    color: rgba(230, 230, 255, 0.9);
+    font-weight: 400;
+    padding: 0.5rem;
+    width: 20%;
+    background-color: ${defaultTheme.primaryPalette[800]};
   }
 
   .desc {
-    font-size: 1.1rem;
-  }
-`;
-
-const ButtonsWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 1.5rem;
-
-  .css-button-sliding-to-left--black {
-    min-width: 160px;
-    height: 50px;
-    margin-right: 1.5rem;
-    color: ${defaultTheme.accentColor};
-    padding: 5px 10px;
-    font-family: "Poppins";
     font-weight: 400;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
-    z-index: 0;
-    background: transparent;
-    overflow: hidden;
-    border: 2px solid ${defaultTheme.primaryColor};
-  }
-  .css-button-sliding-to-left--black:hover {
-    color: #000;
-  }
-  .css-button-sliding-to-left--black:hover:after {
-    width: 100%;
-  }
-  .css-button-sliding-to-left--black:after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    transition: all 0.3s ease;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 100%;
-    background: ${defaultTheme.primaryColor};
+    font-size: 0.85rem;
+    margin: 0.5rem 0;
+    width: 90%;
   }
 `;
 
 const HeroImageWrapper = styled.div`
   width: 50%;
   height: 100%;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   & img {
-    width: 100%;
+    width: 60%;
     height: 100%;
   }
 `;

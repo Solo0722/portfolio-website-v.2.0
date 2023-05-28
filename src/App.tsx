@@ -13,6 +13,7 @@ function App() {
           colorText: `${defaultTheme.accentColor}`,
           colorBgContainer: `${defaultTheme.black}`,
           fontFamily: "Montserrat, sans-serif",
+          borderRadius: 4,
         },
         algorithm: theme.darkAlgorithm,
       }}
