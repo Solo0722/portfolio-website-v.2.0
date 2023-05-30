@@ -48,38 +48,35 @@ export const servicesData = [
 export const skillsets = [
   {
     name: "",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
+    image: "https://v1.brittanychiang.com/img/skills/js.png",
   },
   {
     name: "",
-    image:
-      "https://w7.pngwing.com/pngs/235/872/png-transparent-react-computer-icons-redux-javascript-others-logo-symmetry-nodejs-thumbnail.png",
+    image: "https://v1.brittanychiang.com/img/skills/node.png",
   },
   {
     name: "",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/800px-Nextjs-logo.svg.png",
+    image: "https://v1.brittanychiang.com/img/skills/python.png",
   },
   {
     name: "",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
+    image: "https://v1.brittanychiang.com/img/skills/python.png",
   },
   {
     name: "",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/590px-Node.js_logo.svg.png",
+    image: "https://v1.brittanychiang.com/img/skills/python.png",
   },
   {
     name: "",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png",
+    image: "https://v1.brittanychiang.com/img/skills/python.png",
   },
   {
     name: "",
-    image:
-      "https://www.nicepng.com/png/detail/222-2224770_react-native-icon-png.png",
+    image: "https://v1.brittanychiang.com/img/skills/python.png",
+  },
+  {
+    name: "",
+    image: "https://v1.brittanychiang.com/img/skills/mongodb.png",
   },
 ];
 

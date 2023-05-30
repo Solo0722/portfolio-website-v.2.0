@@ -7,6 +7,7 @@ import Blogs from "../containers/blogs";
 import Contact from "../containers/contact";
 import Services from "../containers/services";
 import Experience from "../containers/experience";
+import Footer from "../containers/footer";
 
 const Main = () => {
   return (
@@ -19,6 +20,7 @@ const Main = () => {
       <Projects />
       <Blogs />
       <Contact />
+      <Footer />
     </>
   );
 };

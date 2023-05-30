@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../theme/appTheme";
 import { Button } from "antd";
 
 const MainNav = () => {
+  const [navbar, setNavbar] = useState(false);
+
+  const changeNavHeight = () => {
+    if (window.scrollY >= 75) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  useEffect(() => {
+    changeNavHeight();
+    window.addEventListener("scroll", changeNavHeight);
+  }, []);
+
   return (
-    <NavWrapper>
+    <NavWrapper style={{ height: navbar ? "60px" : "80px" }}>
       <LogoWrapper>
         <p>oasolomon.</p>
       </LogoWrapper>
@@ -50,11 +65,11 @@ const NavWrapper = styled.nav`
   padding: 0rem 6rem;
   font-weight: 200;
   transition: all 0.5s ease-in-out;
-  /* position: sticky; */
-  /* top: -10px; */
+  position: sticky;
+  top: 0px;
   z-index: 99;
   background-color: ${defaultTheme.black};
-
+  transition: all 0.5s ease-in-out, padding 0.5s ease-in-out;
   h3,
   p {
     /* font-family: "Zilla Slab"; */

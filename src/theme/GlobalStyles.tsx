@@ -23,12 +23,11 @@ body {
   scroll-behavior:smooth;
   overflow-x:hidden;
   position:relative;
-
+  
 }
 
 p{
-  font-weight: 200;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 small{

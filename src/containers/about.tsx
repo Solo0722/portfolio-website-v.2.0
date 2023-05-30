@@ -44,6 +44,7 @@ const About = () => {
             <div style={{ display: "inline-block" }} key={skill.name}>
               <SkillBox>
                 <img src={skill.image} alt="skill-logo" />
+                <p>{skill.name}</p>
               </SkillBox>
             </div>
           ))}
@@ -131,7 +132,8 @@ const TechnologiesWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  margin-top: 2rem;
 `;
 
 const HorizontalOverflowContainer = styled.div`
@@ -153,8 +155,8 @@ const HorizontalOverflowContainer = styled.div`
 `;
 
 const SkillBox = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 100px;
   padding: 0.5rem;
   margin: 1rem;
   display: flex;

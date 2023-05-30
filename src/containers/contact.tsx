@@ -106,6 +106,10 @@ const Contact = () => {
           </Form>
         </FormWrapper>
         <ContactDetailsWrapper>
+          <p style={{ lineHeight: "1.6rem" }}>
+            Let's make something new, different and more meaningful or make
+            something more visual and conceptual.
+          </p>
           <ContactBox>
             <div className="contact-logo">
               <ion-icon name="phone-portrait-outline"></ion-icon>
@@ -240,6 +244,10 @@ const ContactDetailsWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
+  p {
+    font-size: 12px;
+  }
+
   @media screen and (max-width: 768px) {
     & {
       width: 100%;
@@ -250,8 +258,8 @@ const ContactDetailsWrapper = styled.div`
 
 const ContactBox = styled.div`
   width: 100%;
-  height: 100px;
-  padding: 20px;
+  height: 60px;
+  margin: 10px 0;
   border-radius: 7px;
   /* background: #fff; */
   /* margin-bottom: 10px; */
@@ -261,17 +269,13 @@ const ContactBox = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
-  p {
-    font-weight: 400;
-  }
-
   ion-icon {
     font-weight: bold;
   }
 
   .contact-logo {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: ${defaultTheme.primaryColor};
     display: flex;
