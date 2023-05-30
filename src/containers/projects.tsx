@@ -3,6 +3,7 @@ import styled from "styled-components";
 import TitleBar from "../components/TitleBar";
 import { Button } from "antd";
 import projectImg from "../assets/images/img.jpg";
+import { MEDIA_QUERIES } from "../utils/constants";
 
 const Projects = () => {
   const projectTypeBtns = [
@@ -42,6 +43,7 @@ const Projects = () => {
           <Button.Group>
             {projectTypeBtns.map((btn) => (
               <Button
+                key={btn}
                 type={btn.toLowerCase() === "web apps" ? "primary" : "ghost"}
                 style={{
                   color: "#fff",
@@ -53,10 +55,27 @@ const Projects = () => {
             ))}
           </Button.Group>
         </ButtonsWrapper>
+        <div className="mobile-btns-wrapper">
+          <HorizontalOverflowContainer>
+            {projectTypeBtns.map((btn) => (
+              <div style={{ display: "inline-block" }} key={btn}>
+                <Button
+                  type={btn.toLowerCase() === "web apps" ? "primary" : "ghost"}
+                  style={{
+                    color: "#fff",
+                  }}
+                  htmlType="submit"
+                >
+                  {btn}
+                </Button>
+              </div>
+            ))}
+          </HorizontalOverflowContainer>
+        </div>
       </ProjectSubHeader>
       <ProjectBody>
         {projects.map((_) => (
-          <ProjectBox>
+          <ProjectBox key={_}>
             <img src={projectImg} alt="project-img" />
           </ProjectBox>
         ))}
@@ -69,6 +88,25 @@ const ProjectsWrapper = styled.section`
   width: 100%;
   min-height: 100vh;
   padding: 6rem;
+
+  .mobile-btns-wrapper {
+    width: 100%;
+    display: none;
+  }
+
+  ${MEDIA_QUERIES.TABLET} {
+    & {
+      padding: 6rem 2rem;
+    }
+  }
+  ${MEDIA_QUERIES.MOBILE} {
+    & {
+      padding: 6rem 1rem;
+    }
+    .mobile-btns-wrapper {
+      display: block;
+    }
+  }
 `;
 
 const ProjectSubHeader = styled.div`
@@ -82,6 +120,27 @@ const ProjectSubHeader = styled.div`
   .subHeaderText {
     width: 30%;
     line-height: 1.6rem;
+  }
+
+  ${MEDIA_QUERIES.TABLET} {
+    & {
+      flex-direction: column;
+    }
+
+    .subHeaderText {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+  ${MEDIA_QUERIES.MOBILE} {
+    & {
+      flex-direction: column;
+    }
+
+    .subHeaderText {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
   }
 `;
 
@@ -100,6 +159,12 @@ const ButtonsWrapper = styled.div`
     margin: 0 0.5rem;
     font-size: 12px;
   }
+
+  ${MEDIA_QUERIES.MOBILE} {
+    & {
+      display: none;
+    }
+  }
 `;
 
 const ProjectBody = styled.div`
@@ -107,7 +172,7 @@ const ProjectBody = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 `;
 
@@ -120,6 +185,45 @@ const ProjectBox = styled.div`
   img {
     width: 100%;
     height: 100%;
+  }
+
+  ${MEDIA_QUERIES.TABLET} {
+    & {
+      width: 48%;
+    }
+  }
+  ${MEDIA_QUERIES.MOBILE} {
+    & {
+      width: 100%;
+    }
+  }
+`;
+
+const HorizontalOverflowContainer = styled.div`
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  p {
+    word-wrap: break-all;
+    word-break: normal;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  button {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    margin: 0 0.5rem;
+    font-size: 12px;
   }
 `;
 

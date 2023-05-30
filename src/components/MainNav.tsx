@@ -2,29 +2,43 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../theme/appTheme";
 import { Button } from "antd";
+import MobileNav from "./MobileNav";
+import { MEDIA_QUERIES } from "../utils/constants";
 
 const MainNav = () => {
-  const [navbar, setNavbar] = useState(false);
+  const [navbar, setNavbar] = useState(true);
 
-  const changeNavHeight = () => {
-    if (window.scrollY >= 75) {
+  let scroll_position = 30;
+  let scroll_direction;
+
+  const changeNavVisibility = () => {
+    scroll_direction =
+      document.body.getBoundingClientRect().top > scroll_position
+        ? "up"
+        : "down";
+    scroll_position = document.body.getBoundingClientRect().top;
+
+    if (scroll_direction === "up") {
+      // If you are scrolling up, then add active menu class
       setNavbar(true);
     } else {
+      // If you Scrolling down, remove the active menu class
       setNavbar(false);
     }
   };
 
   useEffect(() => {
-    changeNavHeight();
-    window.addEventListener("scroll", changeNavHeight);
+    setNavbar(true);
+    changeNavVisibility();
+    window.addEventListener("scroll", changeNavVisibility);
   }, []);
 
   return (
-    <NavWrapper style={{ height: navbar ? "60px" : "80px" }}>
+    <NavWrapper className={navbar ? "active__menu" : ""}>
       <LogoWrapper>
         <p>oasolomon.</p>
       </LogoWrapper>
-      <LinksWrapper className="highlightTextIn">
+      <LinksWrapper>
         <ul>
           <li>
             <p>Home</p>
@@ -52,6 +66,7 @@ const MainNav = () => {
           </li>
         </ul>
       </LinksWrapper>
+      <MobileNav />
     </NavWrapper>
   );
 };
@@ -63,18 +78,36 @@ const NavWrapper = styled.nav`
   align-items: center;
   justify-content: space-between;
   padding: 0rem 6rem;
-  font-weight: 200;
-  transition: all 0.5s ease-in-out;
-  position: sticky;
-  top: 0px;
   z-index: 99;
   background-color: ${defaultTheme.black};
-  transition: all 0.5s ease-in-out, padding 0.5s ease-in-out;
+
+  position: sticky;
+  top: -10%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s ease-in;
+
+  &.active__menu {
+    top: 0%;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: visible;
+  }
+
   h3,
   p {
     /* font-family: "Zilla Slab"; */
     font-weight: 400;
     font-size: 12px;
+  }
+
+  ${MEDIA_QUERIES.TABLET} {
+    padding: 0 2rem;
+  }
+  ${MEDIA_QUERIES.MOBILE} {
+    padding: 0 1rem;
+    height: 60px;
   }
 `;
 
@@ -99,6 +132,10 @@ const LinksWrapper = styled.div`
     font-size: 14px;
     padding: 0.5rem 1rem;
     margin-left: 1.5rem;
+  }
+
+  li:hover {
+    color: rgba(230, 230, 255, 0.5);
   }
 
   .css-button-sliding-to-left--black {
@@ -133,6 +170,13 @@ const LinksWrapper = styled.div`
     width: 0;
     height: 100%;
     background: ${defaultTheme.primaryColor};
+  }
+
+  ${MEDIA_QUERIES.TABLET} {
+    display: none;
+  }
+  ${MEDIA_QUERIES.MOBILE} {
+    display: none;
   }
 `;
 

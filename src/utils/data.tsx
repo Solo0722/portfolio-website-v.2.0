@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const ExperienceBox = styled.div`
   display: flex;
   flex-direction: column;
+
+  p,
+  h4 {
+    line-height: 1.6rem;
+  }
 `;
 
 export const socialMedia = [
@@ -26,68 +31,54 @@ export const servicesData = [
   {
     image: <ion-icon name="trophy-outline"></ion-icon>,
     name: "awards",
-    value: "02",
+    startValue: "00",
+    endValue: "02",
   },
   {
     image: <ion-icon name="people-outline"></ion-icon>,
     name: "clients",
-    value: "50+",
+    startValue: "00",
+    endValue: "50",
   },
   {
     image: <ion-icon name="code-working-outline"></ion-icon>,
     name: "years experience",
-    value: "03",
+    startValue: "00",
+    endValue: "03",
+    endIcon: "+",
   },
   {
     image: <ion-icon name="laptop-outline"></ion-icon>,
     name: "projects",
-    value: "80+",
+    startValue: "00",
+    endValue: "80",
+    endIcon: "+",
   },
 ];
 
 export const skillsets = [
-  {
-    name: "",
-    image: "https://v1.brittanychiang.com/img/skills/js.png",
-  },
-  {
-    name: "",
-    image: "https://v1.brittanychiang.com/img/skills/node.png",
-  },
-  {
-    name: "",
-    image: "https://v1.brittanychiang.com/img/skills/python.png",
-  },
-  {
-    name: "",
-    image: "https://v1.brittanychiang.com/img/skills/python.png",
-  },
-  {
-    name: "",
-    image: "https://v1.brittanychiang.com/img/skills/python.png",
-  },
-  {
-    name: "",
-    image: "https://v1.brittanychiang.com/img/skills/python.png",
-  },
-  {
-    name: "",
-    image: "https://v1.brittanychiang.com/img/skills/python.png",
-  },
-  {
-    name: "",
-    image: "https://v1.brittanychiang.com/img/skills/mongodb.png",
-  },
+  "Javascript",
+  "React",
+  "Typescript",
+  "React Native",
+  "Nextjs",
+  "Electronjs",
+  "Python",
+  "Sanity.io",
+  "Firebase",
+  "Mongodb",
+  "Nodejs",
+  "Git",
 ];
 
 export const experienceData = [
   {
     children: (
       <ExperienceBox>
-        <p>
+        <h4>
           (Remote Work - Internship) Frontend developer Intern, JLS Trading Co.
           USA
-        </p>
+        </h4>
         <p>
           Worked as an intern where I worked on fixing bugs in the console and
           on the responsiveness of the application. I also contributed to the
@@ -100,10 +91,10 @@ export const experienceData = [
   {
     children: (
       <ExperienceBox>
-        <p>
+        <h4>
           (Remote Work - Internship) Frontend developer Intern, JLS Trading Co.
           USA
-        </p>
+        </h4>
         <p>
           Worked as an intern where I worked on fixing bugs in the console and
           on the responsiveness of the application. I also contributed to the
@@ -116,10 +107,10 @@ export const experienceData = [
   {
     children: (
       <ExperienceBox>
-        <p>
+        <h4>
           (Remote Work - Internship) Frontend developer Intern, JLS Trading Co.
           USA
-        </p>
+        </h4>
         <p>
           Worked as an intern where I worked on fixing bugs in the console and
           on the responsiveness of the application. I also contributed to the

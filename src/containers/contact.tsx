@@ -3,6 +3,7 @@ import styled from "styled-components";
 import TitleBar from "../components/TitleBar";
 import { Button, Form, Input, message } from "antd";
 import { defaultTheme } from "../theme/appTheme";
+import { MEDIA_QUERIES } from "../utils/constants";
 
 const Contact = () => {
   const [form] = Form.useForm();
@@ -149,8 +150,18 @@ const Contact = () => {
 const ContactWrapper = styled.section`
   width: 100%;
   min-height: 100vh;
-  max-height: 100vh;
   padding: 6rem;
+
+  ${MEDIA_QUERIES.TABLET} {
+    & {
+      padding: 6rem 2rem;
+    }
+  }
+  ${MEDIA_QUERIES.MOBILE} {
+    & {
+      padding: 6rem 1rem;
+    }
+  }
 `;
 
 const ContactContent = styled.div`
@@ -267,7 +278,7 @@ const ContactBox = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   ion-icon {
     font-weight: bold;
@@ -281,10 +292,11 @@ const ContactBox = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 1rem;
   }
 
   .contact-content {
-    width: 70%;
+    /* width: 70%; */
     height: 100%;
     display: flex;
     flex-direction: column;

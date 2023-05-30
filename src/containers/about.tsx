@@ -4,6 +4,7 @@ import { defaultTheme } from "../theme/appTheme";
 import TitleBar from "../components/TitleBar";
 import myImg from "../assets/images/my-image.jpg";
 import { skillsets } from "../utils/data";
+import { MEDIA_QUERIES } from "../utils/constants";
 
 const About = () => {
   return (
@@ -39,16 +40,14 @@ const About = () => {
         </MyImageWrapper>
       </AboutBody>
       <TechnologiesWrapper>
-        <HorizontalOverflowContainer>
+        <p>Below are a few of the technologies I have worked with: </p>
+        <ul>
           {skillsets.map((skill) => (
-            <div style={{ display: "inline-block" }} key={skill.name}>
-              <SkillBox>
-                <img src={skill.image} alt="skill-logo" />
-                <p>{skill.name}</p>
-              </SkillBox>
-            </div>
+            <li key={skill}>
+              <small>{skill}</small>
+            </li>
           ))}
-        </HorizontalOverflowContainer>
+        </ul>
       </TechnologiesWrapper>
     </AboutWrapper>
   );
@@ -67,28 +66,16 @@ const AboutWrapper = styled.section`
     text-align: justify;
     text-justify: distribute;
   }
-`;
 
-const AboutHeader = styled.div`
-  h2 {
-    font-family: "Lobster Two", "Montserrat", sans-serif;
-    margin: 1rem 0;
-    position: relative;
-    width: 100%;
-    white-space: nowrap;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
+  ${MEDIA_QUERIES.TABLET} {
+    & {
+      padding: 6rem 2rem;
+    }
   }
-  h2::after {
-    content: "";
-    display: block;
-    position: relative;
-    top: 0px;
-    width: 300px;
-    height: 1px;
-    margin-left: 10px;
-    background-color: rgba(230, 230, 255, 0.5);
+  ${MEDIA_QUERIES.MOBILE} {
+    & {
+      padding: 6rem 1rem;
+    }
   }
 `;
 
@@ -99,12 +86,34 @@ const AboutBody = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  ${MEDIA_QUERIES.TABLET} {
+    & {
+      flex-direction: column-reverse;
+    }
+  }
+  ${MEDIA_QUERIES.MOBILE} {
+    & {
+      flex-direction: column-reverse;
+    }
+  }
 `;
 
 const AboutDescription = styled.div`
   width: 65%;
   height: 100%;
   margin-top: 1rem;
+
+  ${MEDIA_QUERIES.TABLET} {
+    & {
+      width: 100%;
+    }
+  }
+  ${MEDIA_QUERIES.MOBILE} {
+    & {
+      width: 100%;
+    }
+  }
 `;
 
 const MyImageWrapper = styled.div`
@@ -113,6 +122,19 @@ const MyImageWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
+
+  ${MEDIA_QUERIES.TABLET} {
+    & {
+      margin-top: 1rem;
+      width: 100%;
+    }
+  }
+  ${MEDIA_QUERIES.MOBILE} {
+    & {
+      margin-top: 1rem;
+      width: 100%;
+    }
+  }
 `;
 
 const ImageContent = styled.div`
@@ -130,10 +152,24 @@ const ImageContent = styled.div`
 
 const TechnologiesWrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
+  flex-direction: column;
+
+  ul {
+    list-style-type: disc;
+    column-count: 3;
+  }
+
+  li {
+    list-style-position: inside;
+  }
+
+  li::marker {
+    color: ${defaultTheme.primaryColor};
+  }
+
+  small {
+    font-weight: 400;
+  }
 `;
 
 const HorizontalOverflowContainer = styled.div`

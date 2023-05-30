@@ -3,6 +3,7 @@ import styled from "styled-components";
 import TitleBar from "../components/TitleBar";
 import { defaultTheme } from "../theme/appTheme";
 import blogImg from "../assets/images/img.jpg";
+import { MEDIA_QUERIES } from "../utils/constants";
 
 const Blogs = () => {
   const blogs = ["", "", "", "", "", "", "", ""];
@@ -37,6 +38,17 @@ const BlogsWrapper = styled.section`
   min-height: 100vh;
   padding: 6rem;
   background-color: ${defaultTheme.accentColor};
+
+  ${MEDIA_QUERIES.TABLET} {
+    & {
+      padding: 6rem 2rem;
+    }
+  }
+  ${MEDIA_QUERIES.MOBILE} {
+    & {
+      padding: 6rem 1rem;
+    }
+  }
 `;
 
 const BlogBody = styled.div`
@@ -45,7 +57,7 @@ const BlogBody = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 `;
 
@@ -69,7 +81,7 @@ const BlogBox = styled.div`
   }
 
   h3 {
-    font-size:18px;
+    font-size: 18px;
   }
 
   small {
@@ -77,11 +89,11 @@ const BlogBox = styled.div`
   }
 
   .image-wrapper {
-    flex: 0.4;
+    height: 40%;
     width: 100%;
   }
   .content-wrapper {
-    flex: 0.6;
+    height: 60%;
     width: 100%;
   }
 
@@ -90,6 +102,17 @@ const BlogBox = styled.div`
     background-color: ${defaultTheme.primaryColor};
     width: 40%;
     margin: 0.2rem 0;
+  }
+
+  ${MEDIA_QUERIES.TABLET} {
+    & {
+      width: 33%;
+    }
+  }
+  ${MEDIA_QUERIES.MOBILE} {
+    & {
+      width: 100%;
+    }
   }
 `;
 export default Blogs;
