@@ -8,7 +8,7 @@ import { MEDIA_QUERIES } from "../utils/constants";
 
 const Home = () => {
   return (
-    <HomeWrapper>
+    <HomeWrapper id="home">
       <ContentWrapper>
         <DescriptionWrapper>
           <small>Hey there, I'm</small>

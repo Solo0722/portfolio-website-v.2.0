@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import TitleBar from "../components/TitleBar";
-import { Button } from "antd";
+import { Button, Spin } from "antd";
 import projectImg from "../assets/images/img.jpg";
 import { MEDIA_QUERIES } from "../utils/constants";
+import { client } from "../utils/sanity/sanityClient";
+import { projectsQuery } from "../utils/sanity/sanityQueries";
 
 const Projects = () => {
+  const [loading, setLoading] = useState(false);
+  const [projects, setProjects] = useState([]);
+
   const projectTypeBtns = [
     "Web apps",
     "Mobile apps",
@@ -13,27 +18,20 @@ const Projects = () => {
     "Backend",
   ];
 
-  const projects = [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-  ];
+  useEffect(() => {
+    setLoading(true);
+    client
+      .fetch(projectsQuery)
+      .then((results) => {
+        setProjects(results);
+        console.log(results);
+      })
+      .catch((err) => console.error(err))
+      .finally(() => setLoading(false));
+  }, []);
 
   return (
-    <ProjectsWrapper>
+    <ProjectsWrapper id="projects">
       <TitleBar title="Projects I have worked on" />
       <ProjectSubHeader>
         <p className="subHeaderText">
@@ -74,11 +72,15 @@ const Projects = () => {
         </div>
       </ProjectSubHeader>
       <ProjectBody>
-        {projects.map((_) => (
-          <ProjectBox key={_}>
-            <img src={projectImg} alt="project-img" />
-          </ProjectBox>
-        ))}
+        {loading ? (
+          <Spin />
+        ) : (
+          projects?.map((_) => (
+            <ProjectBox key={_}>
+              <img src={projectImg} alt="project-img" />
+            </ProjectBox>
+          ))
+        )}
       </ProjectBody>
     </ProjectsWrapper>
   );

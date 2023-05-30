@@ -19,7 +19,7 @@ const Contact = () => {
   };
 
   return (
-    <ContactWrapper>
+    <ContactWrapper id="contact">
       <TitleBar title="Let's get in touch" />
       <ContactContent>
         <FormWrapper>

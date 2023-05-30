@@ -1,33 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import TitleBar from "../components/TitleBar";
 import { defaultTheme } from "../theme/appTheme";
 import blogImg from "../assets/images/img.jpg";
 import { MEDIA_QUERIES } from "../utils/constants";
+import { client } from "../utils/sanity/sanityClient";
+import { blogsQuery } from "../utils/sanity/sanityQueries";
+import { Spin } from "antd";
 
 const Blogs = () => {
-  const blogs = ["", "", "", "", "", "", "", ""];
+  const [loading, setLoading] = useState(false);
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    setLoading(true);
+    client
+      .fetch(blogsQuery)
+      .then((results) => {
+        setBlogs(results);
+        console.log(results);
+      })
+      .catch((err) => console.error(err))
+      .finally(() => setLoading(false));
+  }, []);
 
   return (
-    <BlogsWrapper>
+    <BlogsWrapper id="blogs">
       <TitleBar title="Blogs I have written" />
       <BlogBody>
-        {blogs.map((_) => (
-          <BlogBox>
-            <div className="image-wrapper">
-              <img src={blogImg} alt="project-img" />
-            </div>
-            <div className="content-wrapper">
-              <h3>Breaking your coder's block.</h3>
-              <small>APRIL 29, 2022</small>
-              <div className="divider" />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-                ad, quos.
-              </p>
-            </div>
-          </BlogBox>
-        ))}
+        {loading ? (
+          <Spin />
+        ) : (
+          blogs?.map((_) => (
+            <BlogBox key={_}>
+              <div className="image-wrapper">
+                <img src={blogImg} alt="project-img" />
+              </div>
+              <div className="content-wrapper">
+                <h3>Breaking your coder's block.</h3>
+                <small>APRIL 29, 2022</small>
+                <div className="divider" />
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Tenetur ad, quos.
+                </p>
+              </div>
+            </BlogBox>
+          ))
+        )}
       </BlogBody>
     </BlogsWrapper>
   );

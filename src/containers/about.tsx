@@ -8,7 +8,7 @@ import { MEDIA_QUERIES } from "../utils/constants";
 
 const About = () => {
   return (
-    <AboutWrapper>
+    <AboutWrapper id="about">
       <TitleBar title="About me" />
       <AboutBody>
         <AboutDescription>

@@ -10,6 +10,29 @@ export const ExperienceBox = styled.div`
   }
 `;
 
+export const navLinks = [
+  {
+    name: "Home",
+    url:"#home",
+  },
+  {
+    name: "About",
+    url:"#about",
+  },
+  {
+    name: "Projects",
+    url:"#projects",
+  },
+  {
+    name: "Blogs",
+    url:"#blogs",
+  },
+  {
+    name: "Contact",
+    url:"#contact",
+  },
+]
+
 export const socialMedia = [
   {
     name: "LinkedIn",

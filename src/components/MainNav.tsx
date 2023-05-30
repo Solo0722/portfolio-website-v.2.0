@@ -4,6 +4,7 @@ import { defaultTheme } from "../theme/appTheme";
 import { Button } from "antd";
 import MobileNav from "./MobileNav";
 import { MEDIA_QUERIES } from "../utils/constants";
+import Drawebar from "./Drawebar";
 
 const MainNav = () => {
   const [navbar, setNavbar] = useState(true);
@@ -41,32 +42,48 @@ const MainNav = () => {
       <LinksWrapper>
         <ul>
           <li>
-            <p>Home</p>
+            <a href="#home">
+              <p>Home</p>
+            </a>
           </li>
           <li>
-            <p>About</p>
+            <a href="#about">
+              <p>About</p>
+            </a>
           </li>
           <li>
-            <p>Projects</p>
+            <a href="#projects">
+              <p>Projects</p>
+            </a>
           </li>
           <li>
-            <p>Blogs</p>
+            <a href="#blogs">
+              <p>Blogs</p>
+            </a>
           </li>
           <li>
-            <p>Contact</p>
+            <a href="#contact">
+              <p>Contact</p>
+            </a>
           </li>
           <li>
-            <Button
-              type="primary"
-              style={{ fontSize: 12 }}
-              className="css-button-sliding-to-left--black"
+            <a
+              href={"https://file.io/PNIWrrsrKl2S"}
+              download={true}
+              target="_blank"
             >
-              Download CV
-            </Button>
+              <Button
+                type="primary"
+                style={{ fontSize: 12 }}
+                className="css-button-sliding-to-left--black"
+              >
+                Download CV
+              </Button>
+            </a>
           </li>
         </ul>
       </LinksWrapper>
-      <MobileNav />
+      <Drawebar />
     </NavWrapper>
   );
 };
@@ -95,6 +112,7 @@ const NavWrapper = styled.nav`
     pointer-events: visible;
   }
 
+  
   h3,
   p {
     /* font-family: "Zilla Slab"; */
@@ -125,6 +143,11 @@ const LinksWrapper = styled.div`
     list-style-type: none;
   }
 
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+
   li {
     display: inline-block;
     cursor: pointer;
@@ -134,7 +157,7 @@ const LinksWrapper = styled.div`
     margin-left: 1.5rem;
   }
 
-  li:hover {
+  li a:hover {
     color: rgba(230, 230, 255, 0.5);
   }
 
