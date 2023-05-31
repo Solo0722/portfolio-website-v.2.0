@@ -1,22 +1,46 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import TitleBar from "../components/TitleBar";
 import { Button, Form, Input, message } from "antd";
 import { defaultTheme } from "../theme/appTheme";
 import { MEDIA_QUERIES } from "../utils/constants";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [form] = Form.useForm();
 
-  const onFinish = async (values) => {
+  const onFinish = async (values: any) => {
     console.log("Success:", values);
+    await emailjs
+      .send(
+        "service_3g2rq2c",
+        "template_lj7rhld",
+        {
+          to_name: "Solomon Owusu-Ansah",
+          from_name: values.name,
+          message: values.message,
+          reply_to: "owusuansahsolomon39@gmail.com",
+          from_email: values.email,
+        },
+        "pXojUsX_OjqKKvLln"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
     message.success("Message submitted :)");
     form.resetFields();
   };
 
-  const onFinishFailed = (errorInfo) => {
+  const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
   };
+
+  const formRef = useRef();
 
   return (
     <ContactWrapper id="contact">
@@ -24,6 +48,8 @@ const Contact = () => {
       <ContactContent>
         <FormWrapper>
           <Form
+            id="myForm"
+            ref={formRef}
             form={form}
             name="basic"
             initialValues={{

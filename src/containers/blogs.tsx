@@ -31,19 +31,16 @@ const Blogs = () => {
         {loading ? (
           <Spin />
         ) : (
-          blogs?.map((_) => (
-            <BlogBox key={_}>
+          blogs?.map((blog) => (
+            <BlogBox key={blog?._id}>
               <div className="image-wrapper">
-                <img src={blogImg} alt="project-img" />
+                <img src={blog?.imageUrl} alt="project-img" />
               </div>
               <div className="content-wrapper">
-                <h3>Breaking your coder's block.</h3>
+                <h3>{blog?.title}</h3>
                 <small>APRIL 29, 2022</small>
                 <div className="divider" />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur ad, quos.
-                </p>
+                <p>{blog?.subHeader}</p>
               </div>
             </BlogBox>
           ))
@@ -91,6 +88,7 @@ const BlogBox = styled.div`
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
   p,
@@ -109,11 +107,11 @@ const BlogBox = styled.div`
   }
 
   .image-wrapper {
-    height: 40%;
+    height: 200px;
     width: 100%;
   }
   .content-wrapper {
-    height: 60%;
+    height: 150px;
     width: 100%;
   }
 

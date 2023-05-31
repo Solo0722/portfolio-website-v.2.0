@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import heroImg from "../assets/images/man.png";
+import heroImg from "../assets/images/coder.webp";
 import { defaultTheme } from "../theme/appTheme";
 import { Button } from "antd";
 import { socialMedia } from "../utils/data";
@@ -84,6 +84,7 @@ const DescriptionWrapper = styled.div`
     font-weight: 400;
     padding: 0.5rem;
     width: 20%;
+    border-radius: 4px;
     background-color: ${defaultTheme.primaryPalette[500]};
   }
 
@@ -144,7 +145,7 @@ const HeroImageWrapper = styled.div`
   justify-content: center;
 
   & img {
-    width: 60%;
+    width: 100%;
     height: 100%;
   }
 

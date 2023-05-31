@@ -4,6 +4,7 @@ import { MEDIA_QUERIES } from "../utils/constants";
 import { Button, Drawer } from "antd";
 import { defaultTheme } from "../theme/appTheme";
 import { navLinks } from "../utils/data";
+import Resume from "../assets/UpdatedResume.pdf";
 
 const Drawebar = () => {
   const [open, setOpen] = useState(false);
@@ -48,11 +49,7 @@ const Drawebar = () => {
               </li>
             ))}
             <li>
-              <a
-                href={"https://file.io/PNIWrrsrKl2S"}
-                download={true}
-                target="_blank"
-              >
+              <a href={Resume} download={true} target="_blank">
                 <Button
                   type="primary"
                   style={{ fontSize: 12 }}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../theme/appTheme";
 import { Button } from "antd";
-import MobileNav from "./MobileNav";
+import Resume from '../assets/UpdatedResume.pdf'; 
 import { MEDIA_QUERIES } from "../utils/constants";
 import Drawebar from "./Drawebar";
 
@@ -68,7 +68,7 @@ const MainNav = () => {
           </li>
           <li>
             <a
-              href={"https://file.io/PNIWrrsrKl2S"}
+              href={Resume}
               download={true}
               target="_blank"
             >

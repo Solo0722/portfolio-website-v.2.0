@@ -13,25 +13,25 @@ export const ExperienceBox = styled.div`
 export const navLinks = [
   {
     name: "Home",
-    url:"#home",
+    url: "#home",
   },
   {
     name: "About",
-    url:"#about",
+    url: "#about",
   },
   {
     name: "Projects",
-    url:"#projects",
+    url: "#projects",
   },
   {
     name: "Blogs",
-    url:"#blogs",
+    url: "#blogs",
   },
   {
     name: "Contact",
-    url:"#contact",
+    url: "#contact",
   },
-]
+];
 
 export const socialMedia = [
   {
@@ -107,7 +107,7 @@ export const experienceData = [
           on the responsiveness of the application. I also contributed to the
           creation of other important components in the application.
         </p>
-        <p>November 2022 - January 2022</p>
+        <p>November 2022 - January 2023</p>
       </ExperienceBox>
     ),
   },
@@ -123,23 +123,19 @@ export const experienceData = [
           on the responsiveness of the application. I also contributed to the
           creation of other important components in the application.
         </p>
-        <p>November 2022 - January 2022</p>
+        <p>November 2021 - January 2022</p>
       </ExperienceBox>
     ),
   },
   {
     children: (
       <ExperienceBox>
-        <h4>
-          (Remote Work - Internship) Frontend developer Intern, JLS Trading Co.
-          USA
-        </h4>
+        <h4>Bachelor's Degree in Computer Engineering, KNUST</h4>
         <p>
-          Worked as an intern where I worked on fixing bugs in the console and
-          on the responsiveness of the application. I also contributed to the
-          creation of other important components in the application.
+          I am currently pursuing BSc. Computer Engineering in Kwame Nkrumah
+          University of Science and Technology.
         </p>
-        <p>November 2022 - January 2022</p>
+        <p>January 2021 - September 2024</p>
       </ExperienceBox>
     ),
   },

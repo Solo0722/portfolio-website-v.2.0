@@ -4,18 +4,36 @@ import TitleBar from "../components/TitleBar";
 import { Button, Spin } from "antd";
 import projectImg from "../assets/images/img.jpg";
 import { MEDIA_QUERIES } from "../utils/constants";
-import { client } from "../utils/sanity/sanityClient";
+import { client, urlFor } from "../utils/sanity/sanityClient";
 import { projectsQuery } from "../utils/sanity/sanityQueries";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Projects = () => {
   const [loading, setLoading] = useState(false);
   const [projects, setProjects] = useState([]);
+  const [activeProjectType, setActiveProjectType] = useState("webapps");
 
   const projectTypeBtns = [
-    "Web apps",
-    "Mobile apps",
-    "Desktop apps",
-    "Backend",
+    {
+      name: "Web apps",
+      value: "webapps",
+      set: ["", "", "", "", "", "", "", "", ""],
+    },
+    {
+      name: "Mobile apps",
+      value: "mobileapps",
+      set: ["", "", "", "", "", ""],
+    },
+    {
+      name: "Desktop apps",
+      value: "desktopapps",
+      set: ["", ""],
+    },
+    {
+      name: "Backend",
+      value: "backend",
+      set: ["", "", "", "", "", "", "", "", "", "", "", ""],
+    },
   ];
 
   useEffect(() => {
@@ -30,6 +48,8 @@ const Projects = () => {
       .finally(() => setLoading(false));
   }, []);
 
+  const [p, setP] = useState(["", "", "", "", "", "", "", "", "", "", ""]);
+
   return (
     <ProjectsWrapper id="projects">
       <TitleBar title="Projects I have worked on" />
@@ -41,14 +61,21 @@ const Projects = () => {
           <Button.Group>
             {projectTypeBtns.map((btn) => (
               <Button
-                key={btn}
-                type={btn.toLowerCase() === "web apps" ? "primary" : "ghost"}
+                key={btn.value}
+                type={
+                  btn.value.toLowerCase() === activeProjectType
+                    ? "primary"
+                    : "ghost"
+                }
+                onClick={() => {
+                  setP(btn.set);
+                  setActiveProjectType(btn.value);
+                }}
                 style={{
                   color: "#fff",
                 }}
-                htmlType="submit"
               >
-                {btn}
+                {btn.name}
               </Button>
             ))}
           </Button.Group>
@@ -56,30 +83,46 @@ const Projects = () => {
         <div className="mobile-btns-wrapper">
           <HorizontalOverflowContainer>
             {projectTypeBtns.map((btn) => (
-              <div style={{ display: "inline-block" }} key={btn}>
+              <div style={{ display: "inline-block" }} key={btn.value}>
                 <Button
-                  type={btn.toLowerCase() === "web apps" ? "primary" : "ghost"}
+                  type={
+                    btn.value.toLowerCase() === activeProjectType
+                      ? "primary"
+                      : "ghost"
+                  }
+                  onClick={() => {
+                    setP(btn.set);
+                    setActiveProjectType(btn.value);
+                  }}
                   style={{
                     color: "#fff",
                   }}
-                  htmlType="submit"
                 >
-                  {btn}
+                  {btn.name}
                 </Button>
               </div>
             ))}
           </HorizontalOverflowContainer>
         </div>
       </ProjectSubHeader>
-      <ProjectBody>
+      <ProjectBody as={motion.div} layout>
         {loading ? (
           <Spin />
         ) : (
-          projects?.map((_) => (
-            <ProjectBox key={_}>
-              <img src={projectImg} alt="project-img" />
-            </ProjectBox>
-          ))
+          <AnimatePresence>
+            {projects?.map((project) => (
+              <ProjectBox
+                as={motion.div}
+                layout
+                animate={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                exit={{ opacity: 0 }}
+                key={project?._id}
+              >
+                <img src={urlFor(project?.image).url()} alt="project-img" />
+              </ProjectBox>
+            ))}
+          </AnimatePresence>
         )}
       </ProjectBody>
     </ProjectsWrapper>
@@ -179,7 +222,7 @@ const ProjectBody = styled.div`
 `;
 
 const ProjectBox = styled.div`
-  width: 32%;
+  width: 33%;
   height: 300px;
   margin: 1rem 0;
   border-radius: 2px;
