@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../theme/appTheme";
 import { Button } from "antd";
-import Resume from '../assets/UpdatedResume.pdf'; 
 import { MEDIA_QUERIES } from "../utils/constants";
 import Drawebar from "./Drawebar";
 
@@ -68,7 +67,9 @@ const MainNav = () => {
           </li>
           <li>
             <a
-              href={Resume}
+              href={
+                "https://ik.imagekit.io/5kwcgtj3iv/images/UpdatedResume.pdf?updatedAt=1685780715527"
+              }
               download={true}
               target="_blank"
             >
@@ -112,7 +113,6 @@ const NavWrapper = styled.nav`
     pointer-events: visible;
   }
 
-  
   h3,
   p {
     /* font-family: "Zilla Slab"; */

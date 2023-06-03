@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import IonIcon from "../components/IonIcon";
 
 export const ExperienceBox = styled.div`
   display: flex;
@@ -37,41 +38,41 @@ export const socialMedia = [
   {
     name: "LinkedIn",
     link: "https://linkedin.com/in/solomon-owusu-ansah-a68668223",
-    icon: <ion-icon name="logo-linkedin"></ion-icon>,
+    icon: <IonIcon iconName="logo-linkedin" />,
   },
   {
     name: "Github",
     link: "https://github.com/solo0722",
-    icon: <ion-icon name="logo-github"></ion-icon>,
+    icon: <IonIcon iconName="logo-github" />,
   },
   {
     name: "Twitter",
     link: "https://twitter.com/@KhobbySolo",
-    icon: <ion-icon name="logo-twitter"></ion-icon>,
+    icon: <IonIcon iconName="logo-twitter" />,
   },
 ];
 export const servicesData = [
   {
-    image: <ion-icon name="trophy-outline"></ion-icon>,
+    image: <IonIcon iconName="trophy-outline" />,
     name: "awards",
     startValue: "00",
     endValue: "02",
   },
   {
-    image: <ion-icon name="people-outline"></ion-icon>,
+    image: <IonIcon iconName="people-outline" />,
     name: "clients",
     startValue: "00",
     endValue: "50",
   },
   {
-    image: <ion-icon name="code-working-outline"></ion-icon>,
+    image: <IonIcon iconName="code-working-outline" />,
     name: "years experience",
     startValue: "00",
     endValue: "03",
     endIcon: "+",
   },
   {
-    image: <ion-icon name="laptop-outline"></ion-icon>,
+    image: <IonIcon iconName="laptop-outline" />,
     name: "projects",
     startValue: "00",
     endValue: "80",

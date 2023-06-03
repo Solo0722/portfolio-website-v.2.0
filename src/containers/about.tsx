@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { defaultTheme } from "../theme/appTheme";
 import TitleBar from "../components/TitleBar";
-import myImg from "../assets/images/my-image.jpg";
 import { skillsets } from "../utils/data";
 import { MEDIA_QUERIES } from "../utils/constants";
 
@@ -35,7 +34,13 @@ const About = () => {
         </AboutDescription>
         <MyImageWrapper>
           <ImageContent>
-            <img src={myImg} alt="my-pic" />
+            <img
+              src={
+                "https://ik.imagekit.io/5kwcgtj3iv/images/my-image.webp?updatedAt=1685780496663"
+              }
+              alt="my-pic"
+              loading="lazy"
+            />
           </ImageContent>
         </MyImageWrapper>
       </AboutBody>

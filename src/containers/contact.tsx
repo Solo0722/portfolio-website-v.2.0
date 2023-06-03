@@ -5,6 +5,7 @@ import { Button, Form, Input, message } from "antd";
 import { defaultTheme } from "../theme/appTheme";
 import { MEDIA_QUERIES } from "../utils/constants";
 import emailjs from "@emailjs/browser";
+import IonIcon from "../components/IonIcon";
 
 const Contact = () => {
   const [form] = Form.useForm();
@@ -40,8 +41,6 @@ const Contact = () => {
     console.log("Failed:", errorInfo);
   };
 
-  const formRef = useRef();
-
   return (
     <ContactWrapper id="contact">
       <TitleBar title="Let's get in touch" />
@@ -49,7 +48,6 @@ const Contact = () => {
         <FormWrapper>
           <Form
             id="myForm"
-            ref={formRef}
             form={form}
             name="basic"
             initialValues={{
@@ -139,7 +137,7 @@ const Contact = () => {
           </p>
           <ContactBox>
             <div className="contact-logo">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
+              <IonIcon iconName="phone-portrait-outline" />
             </div>
             <div className="contact-content">
               <p>+233 (0) 599171142</p>
@@ -148,7 +146,7 @@ const Contact = () => {
           </ContactBox>
           <ContactBox>
             <div className="contact-logo">
-              <ion-icon name="mail-outline"></ion-icon>
+              <IonIcon iconName="mail-outline" />
             </div>
             <div className="contact-content">
               <p>
@@ -160,7 +158,7 @@ const Contact = () => {
           </ContactBox>
           <ContactBox>
             <div className="contact-logo">
-              <ion-icon name="location-outline"></ion-icon>
+              <IonIcon iconName="location-outline" />
             </div>
             <div className="contact-content">
               <p>Kentinkrono</p>

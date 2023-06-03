@@ -1,8 +1,10 @@
 import { ConfigProvider, theme } from "antd";
 import "./App.css";
-import Main from "./pages/Main";
 import { defaultTheme } from "./theme/appTheme";
 import { GlobalStyles } from "./theme/GlobalStyles";
+import { Suspense, lazy } from "react";
+
+const Main = lazy(() => import("./pages/Main"));
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
       }}
     >
       <GlobalStyles />
-      <Main />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Main />
+      </Suspense>
     </ConfigProvider>
   );
 }

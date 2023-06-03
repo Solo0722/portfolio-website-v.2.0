@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import heroImg from "../assets/images/coder.webp";
 import { defaultTheme } from "../theme/appTheme";
 import { Button } from "antd";
 import { socialMedia } from "../utils/data";
@@ -31,7 +30,13 @@ const Home = () => {
           </ButtonsWrapper>
         </DescriptionWrapper>
         <HeroImageWrapper>
-          <img src={heroImg} alt="" />
+          <img
+            src={
+              "https://ik.imagekit.io/5kwcgtj3iv/images/coder.webp?updatedAt=1685780493080"
+            }
+            alt="hero-img"
+            loading="lazy"
+          />
         </HeroImageWrapper>
       </ContentWrapper>
     </HomeWrapper>

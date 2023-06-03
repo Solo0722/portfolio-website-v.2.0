@@ -10,7 +10,7 @@ import Experience from "../containers/experience";
 import Footer from "../containers/footer";
 import { FloatButton } from "antd";
 import { defaultTheme } from "../theme/appTheme";
-import ServicesViewportBlock from "../containers/services";
+import IonIcon from "../components/IonIcon";
 
 const Main = () => {
   return (
@@ -36,7 +36,7 @@ const Main = () => {
           boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.1)",
           color: "#fff",
         }}
-        icon={<ion-icon name="caret-up-outline"></ion-icon>}
+        icon={<IonIcon iconName="caret-up-outline" />}
         shape="square"
       />
     </>

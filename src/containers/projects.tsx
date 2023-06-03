@@ -36,17 +36,17 @@ const Projects = () => {
     },
   ];
 
-  useEffect(() => {
-    setLoading(true);
-    client
-      .fetch(projectsQuery)
-      .then((results) => {
-        setProjects(results);
-        console.log(results);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => setLoading(false));
-  }, []);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   client
+  //     .fetch(projectsQuery)
+  //     .then((results) => {
+  //       setProjects(results);
+  //       console.log(results);
+  //     })
+  //     .catch((err) => console.error(err))
+  //     .finally(() => setLoading(false));
+  // }, []);
 
   const [p, setP] = useState(["", "", "", "", "", "", "", "", "", "", ""]);
 
@@ -119,7 +119,11 @@ const Projects = () => {
                 exit={{ opacity: 0 }}
                 key={project?._id}
               >
-                <img src={urlFor(project?.image).url()} alt="project-img" />
+                <img
+                  src={urlFor(project?.image).url()}
+                  alt="project-img"
+                  loading="lazy"
+                />
               </ProjectBox>
             ))}
           </AnimatePresence>

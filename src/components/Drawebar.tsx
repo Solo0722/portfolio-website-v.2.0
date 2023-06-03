@@ -4,7 +4,7 @@ import { MEDIA_QUERIES } from "../utils/constants";
 import { Button, Drawer } from "antd";
 import { defaultTheme } from "../theme/appTheme";
 import { navLinks } from "../utils/data";
-import Resume from "../assets/UpdatedResume.pdf";
+import IonIcon from "./IonIcon";
 
 const Drawebar = () => {
   const [open, setOpen] = useState(false);
@@ -21,7 +21,7 @@ const Drawebar = () => {
     <MobileNavWrapper>
       <Button
         type="default"
-        icon={<ion-icon name="menu-outline"></ion-icon>}
+        icon={<IonIcon iconName="menu-outline" />}
         className="social-media-btn"
         onClick={showDrawer}
       />
@@ -36,7 +36,7 @@ const Drawebar = () => {
         <DrawerContent>
           <Button
             type="default"
-            icon={<ion-icon name="close-outline"></ion-icon>}
+            icon={<IonIcon iconName="close-outline" />}
             className="social-media-btn close-btn"
             onClick={onClose}
           />
@@ -49,7 +49,13 @@ const Drawebar = () => {
               </li>
             ))}
             <li>
-              <a href={Resume} download={true} target="_blank">
+              <a
+                href={
+                  "https://ik.imagekit.io/5kwcgtj3iv/images/UpdatedResume.pdf?updatedAt=1685780715527"
+                }
+                download={true}
+                target="_blank"
+              >
                 <Button
                   type="primary"
                   style={{ fontSize: 12 }}

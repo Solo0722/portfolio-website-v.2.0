@@ -18,10 +18,12 @@ const FooterWrapper = styled.footer`
   align-items: center;
   justify-content: center;
   border-top: 1px solid rgba(230, 230, 255, 0.1);
+  padding: 1rem;
 
   cite {
     color: rgba(230, 230, 255, 0.5);
     font-size: 12px;
+    text-align: center;
   }
 `;
 

@@ -19,6 +19,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-variant:normal;
   font-weight:400;
+  font-display:swap;
   transition:all 0.20s linear;
   scroll-behavior:smooth;
   overflow-x:hidden;

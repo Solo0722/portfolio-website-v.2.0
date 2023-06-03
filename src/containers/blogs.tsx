@@ -12,17 +12,17 @@ const Blogs = () => {
   const [loading, setLoading] = useState(false);
   const [blogs, setBlogs] = useState([]);
 
-  useEffect(() => {
-    setLoading(true);
-    client
-      .fetch(blogsQuery)
-      .then((results) => {
-        setBlogs(results);
-        console.log(results);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => setLoading(false));
-  }, []);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   client
+  //     .fetch(blogsQuery)
+  //     .then((results) => {
+  //       setBlogs(results);
+  //       console.log(results);
+  //     })
+  //     .catch((err) => console.error(err))
+  //     .finally(() => setLoading(false));
+  // }, []);
 
   return (
     <BlogsWrapper id="blogs">
@@ -34,7 +34,7 @@ const Blogs = () => {
           blogs?.map((blog) => (
             <BlogBox key={blog?._id}>
               <div className="image-wrapper">
-                <img src={blog?.imageUrl} alt="project-img" />
+                <img src={blog?.imageUrl} alt="project-img" loading="lazy"/>
               </div>
               <div className="content-wrapper">
                 <h3>{blog?.title}</h3>
