@@ -2,49 +2,29 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import TitleBar from "../components/TitleBar";
 import { defaultTheme } from "../theme/appTheme";
-import blogImg from "../assets/images/img.jpg";
 import { MEDIA_QUERIES } from "../utils/constants";
-import { client } from "../utils/sanity/sanityClient";
-import { blogsQuery } from "../utils/sanity/sanityQueries";
-import { Spin } from "antd";
+import { blogs } from "../utils/data";
 
 const Blogs = () => {
-  const [loading, setLoading] = useState(false);
-  const [blogs, setBlogs] = useState([]);
-
-  // useEffect(() => {
-  //   setLoading(true);
-  //   client
-  //     .fetch(blogsQuery)
-  //     .then((results) => {
-  //       setBlogs(results);
-  //       console.log(results);
-  //     })
-  //     .catch((err) => console.error(err))
-  //     .finally(() => setLoading(false));
-  // }, []);
 
   return (
     <BlogsWrapper id="blogs">
       <TitleBar title="Blogs I have written" />
       <BlogBody>
-        {loading ? (
-          <Spin />
-        ) : (
-          blogs?.map((blog) => (
-            <BlogBox key={blog?._id}>
-              <div className="image-wrapper">
-                <img src={blog?.imageUrl} alt="project-img" loading="lazy"/>
-              </div>
-              <div className="content-wrapper">
-                <h3>{blog?.title}</h3>
-                <small>APRIL 29, 2022</small>
-                <div className="divider" />
-                <p>{blog?.subHeader}</p>
-              </div>
-            </BlogBox>
-          ))
-        )}
+        
+        {blogs.map((blog,index) => (
+          <BlogBox key={index}>
+            <div className="image-wrapper">
+              {/* <img src={blog?.imageUrl} alt="project-img" loading="lazy" /> */}
+            </div>
+            <div className="content-wrapper">
+              <h3>Hello World</h3>
+              <small>APRIL 29, 2022</small>
+              <div className="divider" />
+              <p>hello world</p>
+            </div>
+          </BlogBox>
+        ))}
       </BlogBody>
     </BlogsWrapper>
   );

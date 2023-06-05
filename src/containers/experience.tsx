@@ -8,7 +8,7 @@ import { MEDIA_QUERIES } from "../utils/constants";
 
 const Experience = () => {
   return (
-    <ExperienceWrapper>
+    <ExperienceWrapper className="animation-section">
       <TitleBar title="Experience I have gained" />
       <TimelineWrapper>
         <Timeline mode="left">

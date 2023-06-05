@@ -2,53 +2,33 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import TitleBar from "../components/TitleBar";
 import { Button, Spin } from "antd";
-import projectImg from "../assets/images/img.jpg";
 import { MEDIA_QUERIES } from "../utils/constants";
-import { client, urlFor } from "../utils/sanity/sanityClient";
-import { projectsQuery } from "../utils/sanity/sanityQueries";
 import { motion, AnimatePresence } from "framer-motion";
+import { projects } from "../utils/data";
 
 const Projects = () => {
-  const [loading, setLoading] = useState(false);
-  const [projects, setProjects] = useState([]);
-  const [activeProjectType, setActiveProjectType] = useState("webapps");
+  const [activeProjectType, setActiveProjectType] = useState("web");
 
   const projectTypeBtns = [
     {
       name: "Web apps",
-      value: "webapps",
-      set: ["", "", "", "", "", "", "", "", ""],
+      value: "web",
     },
     {
       name: "Mobile apps",
-      value: "mobileapps",
-      set: ["", "", "", "", "", ""],
+      value: "mobile",
     },
     {
       name: "Desktop apps",
-      value: "desktopapps",
-      set: ["", ""],
+      value: "desktop",
     },
     {
       name: "Backend",
       value: "backend",
-      set: ["", "", "", "", "", "", "", "", "", "", "", ""],
     },
   ];
 
-  // useEffect(() => {
-  //   setLoading(true);
-  //   client
-  //     .fetch(projectsQuery)
-  //     .then((results) => {
-  //       setProjects(results);
-  //       console.log(results);
-  //     })
-  //     .catch((err) => console.error(err))
-  //     .finally(() => setLoading(false));
-  // }, []);
 
-  const [p, setP] = useState(["", "", "", "", "", "", "", "", "", "", ""]);
 
   return (
     <ProjectsWrapper id="projects">
@@ -68,7 +48,6 @@ const Projects = () => {
                     : "ghost"
                 }
                 onClick={() => {
-                  setP(btn.set);
                   setActiveProjectType(btn.value);
                 }}
                 style={{
@@ -91,7 +70,6 @@ const Projects = () => {
                       : "ghost"
                   }
                   onClick={() => {
-                    setP(btn.set);
                     setActiveProjectType(btn.value);
                   }}
                   style={{
@@ -106,28 +84,26 @@ const Projects = () => {
         </div>
       </ProjectSubHeader>
       <ProjectBody as={motion.div} layout>
-        {loading ? (
-          <Spin />
-        ) : (
+        {
           <AnimatePresence>
-            {projects?.map((project) => (
+            {projects.filter(prj => prj.projectType === activeProjectType).map((project) => (
               <ProjectBox
                 as={motion.div}
                 layout
                 animate={{ opacity: 1 }}
                 initial={{ opacity: 0 }}
                 exit={{ opacity: 0 }}
-                key={project?._id}
+                key={project.name}
               >
                 <img
-                  src={urlFor(project?.image).url()}
+                  src={project.image_url}
                   alt="project-img"
                   loading="lazy"
                 />
               </ProjectBox>
             ))}
           </AnimatePresence>
-        )}
+        }
       </ProjectBody>
     </ProjectsWrapper>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import Home from "../containers/home";
 import About from "../containers/about";
 import MainNav from "../components/MainNav";
@@ -13,6 +13,36 @@ import { defaultTheme } from "../theme/appTheme";
 import IonIcon from "../components/IonIcon";
 
 const Main = () => {
+  useLayoutEffect(() => {
+    const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
+    // tl.fromTo(".animation-nav", { opacity: 0 }, { opacity: 1, duration: 1 });
+    tl.fromTo(
+      ".animation-text",
+      { y: "100%", opacity: 0 },
+      { y: "0%", opacity: 1, duration: 1, stagger: 0.25 },
+      "-=1"
+    );
+
+    let sections = gsap.utils.toArray(".animation-section");
+
+    sections.forEach((section: any) => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: "top center",
+            end: "+=400 center",
+          },
+        })
+        .fromTo(
+          ".section-animation-text",
+          { y: "100%", opacity: 0 },
+          { y: "0%", opacity: 1, duration: 1, stagger: 0.25 },
+          "-=1"
+        );
+    });
+  }, []);
+
   return (
     <>
       <MainNav />

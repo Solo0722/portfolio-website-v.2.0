@@ -10,9 +10,9 @@ const Home = () => {
     <HomeWrapper id="home">
       <ContentWrapper>
         <DescriptionWrapper>
-          <small>Hey there, I'm</small>
-          <h1>Solomon Owusu-Ansah</h1>
-          <p className="desc">
+          <small className="animation-text">Hey there, I'm</small>
+          <h1 className="animation-text">Solomon Owusu-Ansah</h1>
+          <p className="desc animation-text">
             A frontend software developer with intermediate knowledge in backend
             development. I create beautiful designs only.
           </p>
@@ -23,7 +23,7 @@ const Home = () => {
                 target="_blank"
                 type="default"
                 icon={lk.icon}
-                className="social-media-btn"
+                className="social-media-btn animation-text"
                 key={lk.name}
               />
             ))}
@@ -31,6 +31,7 @@ const Home = () => {
         </DescriptionWrapper>
         <HeroImageWrapper>
           <img
+            className="animation-text"
             src={
               "https://ik.imagekit.io/5kwcgtj3iv/images/coder.webp?updatedAt=1685780493080"
             }

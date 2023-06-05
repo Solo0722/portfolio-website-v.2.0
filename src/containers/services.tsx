@@ -5,7 +5,6 @@ import { servicesData } from "../utils/data";
 import { MEDIA_QUERIES } from "../utils/constants";
 
 const Services = () => {
-  
   const increaseNumber = ({
     startValue,
     endValue,
@@ -37,9 +36,9 @@ const Services = () => {
   };
 
   return (
-    <ServicesWrapper>
+    <ServicesWrapper className="animation-section">
       {servicesData.map((data) => (
-        <ServiceBox key={data.name}>
+        <ServiceBox key={data.name} className="section-animation-text">
           <IconWrapper>{data.image}</IconWrapper>
           <p className="value-wrapper">
             {increaseNumber({

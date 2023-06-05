@@ -22,7 +22,7 @@ const Drawebar = () => {
       <Button
         type="default"
         icon={<IonIcon iconName="menu-outline" />}
-        className="social-media-btn"
+        className="social-media-btn animation-text"
         onClick={showDrawer}
       />
       <Drawer

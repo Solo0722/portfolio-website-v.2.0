@@ -4,6 +4,7 @@ import { defaultTheme } from "../theme/appTheme";
 import { Button } from "antd";
 import { MEDIA_QUERIES } from "../utils/constants";
 import Drawebar from "./Drawebar";
+import { navLinks } from "../utils/data";
 
 const MainNav = () => {
   const [navbar, setNavbar] = useState(true);
@@ -29,43 +30,26 @@ const MainNav = () => {
 
   useEffect(() => {
     setNavbar(true);
-    changeNavVisibility();
     window.addEventListener("scroll", changeNavVisibility);
   }, []);
 
   return (
-    <NavWrapper className={navbar ? "active__menu" : ""}>
+    <NavWrapper
+      className={navbar ? "active__menu" : ""}
+    >
       <LogoWrapper>
-        <p>oasolomon.</p>
+        <p className="animation-text">oasolomon.</p>
       </LogoWrapper>
       <LinksWrapper>
         <ul>
-          <li>
-            <a href="#home">
-              <p>Home</p>
-            </a>
-          </li>
-          <li>
-            <a href="#about">
-              <p>About</p>
-            </a>
-          </li>
-          <li>
-            <a href="#projects">
-              <p>Projects</p>
-            </a>
-          </li>
-          <li>
-            <a href="#blogs">
-              <p>Blogs</p>
-            </a>
-          </li>
-          <li>
-            <a href="#contact">
-              <p>Contact</p>
-            </a>
-          </li>
-          <li>
+          {navLinks.map((lk) => (
+            <li key={lk.url} className="animation-text">
+              <a href={lk.url}>
+                <p>{lk.name}</p>
+              </a>
+            </li>
+          ))}
+          <li className="animation-text">
             <a
               href={
                 "https://ik.imagekit.io/5kwcgtj3iv/images/UpdatedResume.pdf?updatedAt=1685780715527"
@@ -84,7 +68,7 @@ const MainNav = () => {
           </li>
         </ul>
       </LinksWrapper>
-      <Drawebar />
+      <Drawebar/>
     </NavWrapper>
   );
 };

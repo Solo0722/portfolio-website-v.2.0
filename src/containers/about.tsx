@@ -7,10 +7,10 @@ import { MEDIA_QUERIES } from "../utils/constants";
 
 const About = () => {
   return (
-    <AboutWrapper id="about">
+    <AboutWrapper id="about" className="animation-section">
       <TitleBar title="About me" />
       <AboutBody>
-        <AboutDescription>
+        <AboutDescription className="about-animation-body">
           <p>
             Hola, I'm <b>Owusu-Ansah Solomon</b>, a self-taught passionate
             frontend developer with intermediate knowledge on backend
@@ -32,7 +32,7 @@ const About = () => {
             tune with the latest technological advancement.
           </p>
         </AboutDescription>
-        <MyImageWrapper>
+        <MyImageWrapper className="about-animation-image-container">
           <ImageContent>
             <img
               src={
@@ -44,7 +44,7 @@ const About = () => {
           </ImageContent>
         </MyImageWrapper>
       </AboutBody>
-      <TechnologiesWrapper>
+      <TechnologiesWrapper className="about-animation-body">
         <p>Below are a few of the technologies I have worked with: </p>
         <ul>
           {skillsets.map((skill) => (

@@ -51,6 +51,7 @@ export const socialMedia = [
     icon: <IonIcon iconName="logo-twitter" />,
   },
 ];
+
 export const servicesData = [
   {
     image: <IonIcon iconName="trophy-outline" />,
@@ -99,45 +100,129 @@ export const experienceData = [
   {
     children: (
       <ExperienceBox>
-        <h4>
+        <h4 className="experience-animation-text">
           (Remote Work - Internship) Frontend developer Intern, JLS Trading Co.
           USA
         </h4>
-        <p>
+        <p className="experience-animation-text">
           Worked as an intern where I worked on fixing bugs in the console and
           on the responsiveness of the application. I also contributed to the
           creation of other important components in the application.
         </p>
-        <p>November 2022 - January 2023</p>
+        <p className="experience-animation-text">
+          November 2022 - January 2023
+        </p>
       </ExperienceBox>
     ),
   },
   {
     children: (
       <ExperienceBox>
-        <h4>
+        <h4 className="experience-animation-text">
           (Remote Work - Internship) Frontend developer Intern, JLS Trading Co.
           USA
         </h4>
-        <p>
+        <p className="experience-animation-text">
           Worked as an intern where I worked on fixing bugs in the console and
           on the responsiveness of the application. I also contributed to the
           creation of other important components in the application.
         </p>
-        <p>November 2021 - January 2022</p>
+        <p className="experience-animation-text">
+          November 2021 - January 2022
+        </p>
       </ExperienceBox>
     ),
   },
   {
     children: (
       <ExperienceBox>
-        <h4>Bachelor's Degree in Computer Engineering, KNUST</h4>
-        <p>
+        <h4 className="experience-animation-text">
+          Bachelor's Degree in Computer Engineering, KNUST
+        </h4>
+        <p className="experience-animation-text">
           I am currently pursuing BSc. Computer Engineering in Kwame Nkrumah
           University of Science and Technology.
         </p>
-        <p>January 2021 - September 2024</p>
+        <p className="experience-animation-text">
+          January 2021 - September 2024
+        </p>
       </ExperienceBox>
     ),
   },
 ];
+
+export const projects = [
+  {
+    name: "Streamline",
+    description: "Streamline is a tech blog website",
+    tools: ["React", "Sanity"],
+    url: "",
+    github_repo: "https://github.com/solo0722",
+    image_url:
+      "https://ik.imagekit.io/5kwcgtj3iv/images/streamline.png?updatedAt=1685980343905",
+    projectType: "web",
+  },
+  {
+    name: "Moviemix",
+    description:
+      "Information, Ratings, Reviews and Where to watch the best movies and tv shows.",
+    tools: ["React"],
+    url: "https://moviemix.vercel.app",
+    github_repo: "https://github.com/solo0722",
+    image_url:
+      "https://ik.imagekit.io/5kwcgtj3iv/images/moviemix.png?updatedAt=1685980275617",
+    projectType: "web",
+  },
+  {
+    name: "Contaxts",
+    description: "Contacts listing mobile app made with expo",
+    tools: ["React Native", "Sanity", "Expo", "NativeBase"],
+    url: "",
+    github_repo: "https://github.com/solo0722",
+    image_url: "/assets/contaxts.jpg",
+    projectType: "mobile",
+  },
+
+  {
+    name: "Deliveroo 2.0",
+    description: "Deliveroo clone mobile application",
+    tools: ["React Native", "Sanity", "Expo", "NativeBase"],
+    url: "",
+    github_repo: "https://github.com/solo0722",
+    image_url: "/assets/deliveroo2.jpg",
+    projectType: "mobile",
+  },
+  {
+    name: "Word Finder",
+    description:
+      "Word Finder is a dictionary web application with speech recognition features",
+    tools: ["ReactJs"],
+    url: "https://wordfinder-gh.netlify.app/",
+    github_repo: "https://github.com/solo0722",
+    image_url:
+      "https://ik.imagekit.io/5kwcgtj3iv/images/wordfinder.png?updatedAt=1685980347937",
+    projectType: "web",
+  },
+  {
+    name: "Ripple",
+    description: "",
+    tools: ["NextJS"],
+    url: "https://ripple-sigma.vercel.app/",
+    github_repo: "https://github.com/solo0722",
+    image_url:
+      "https://ik.imagekit.io/5kwcgtj3iv/images/ripple.png?updatedAt=1685980331800",
+    projectType: "web",
+  },
+  {
+    name: "Dotty",
+    description:
+      "Dotty is a news application where users can read about the latest news in the world of sports,politics,entertainment, etc",
+    tools: ["React Native", "NewsApi", "Expo", "NativeBase"],
+    url: "",
+    github_repo: "https://github.com/solo0722",
+    image_url: "/assets/newsapp.jpg",
+    projectType: "mobile",
+  },
+];
+
+export const blogs = [];
