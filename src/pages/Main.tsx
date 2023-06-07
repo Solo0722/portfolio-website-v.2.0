@@ -11,11 +11,11 @@ import Footer from "../containers/footer";
 import { FloatButton } from "antd";
 import { defaultTheme } from "../theme/appTheme";
 import IonIcon from "../components/IonIcon";
+import { gsap } from "gsap";
 
 const Main = () => {
   useLayoutEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
-    // tl.fromTo(".animation-nav", { opacity: 0 }, { opacity: 1, duration: 1 });
     tl.fromTo(
       ".animation-text",
       { y: "100%", opacity: 0 },

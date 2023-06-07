@@ -12,9 +12,11 @@
     "@emailjs/browser": "^3.11.0",
     "antd": "^5.3.3",
     "framer-motion": "^10.12.16",
+    "gsap": "^3.12.0",
     "node": "18.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.9.0",
     "react-in-viewport": "^1.0.0-alpha.30",
     "styled-components": "^5.3.9"
   },
