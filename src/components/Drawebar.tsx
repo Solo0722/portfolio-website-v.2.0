@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import styled from "styled-components";
 import { MEDIA_QUERIES } from "../utils/constants";
 import { Button, Drawer } from "antd";
@@ -16,6 +16,17 @@ const Drawebar = () => {
   const onClose = () => {
     setOpen(false);
   };
+
+  useLayoutEffect(() => {
+    const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
+    // tl.fromTo(".animation-nav", { opacity: 0 }, { opacity: 1, duration: 1 });
+    tl.fromTo(
+      ".animation-navLink",
+      { x: "100%", opacity: 0 },
+      { x: "0%", opacity: 1, duration: 1, stagger: 0.25 },
+      "-=1"
+    );
+  });
 
   return (
     <MobileNavWrapper>
@@ -42,13 +53,13 @@ const Drawebar = () => {
           />
           <ul>
             {navLinks.map((navLink) => (
-              <li key={navLink.name}>
+              <li key={navLink.name} className="animation-navLink">
                 <a href={navLink.url} onClick={onClose}>
                   <p>{navLink.name}</p>
                 </a>
               </li>
             ))}
-            <li>
+            <li className="animation-navLink">
               <a
                 href={
                   "https://ik.imagekit.io/5kwcgtj3iv/images/UpdatedResume.pdf?updatedAt=1685780715527"
