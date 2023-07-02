@@ -97,11 +97,19 @@ const Projects = () => {
                   exit={{ opacity: 0 }}
                   key={project.name}
                 >
-                  <img
-                    src={project.image_url}
-                    alt="project-img"
-                    loading="lazy"
-                  />
+                  {
+                    <img
+                      src={project.image_url}
+                      alt="project-img"
+                      loading="lazy"
+                      className={
+                        project.projectType == "web"
+                          ? "web-image"
+                          : "mobile-image"
+                      }
+                    />
+                  }
+
                   <div className="textBox">
                     <div className="textBoxText">
                       <h4>{project.name}</h4>
@@ -309,9 +317,14 @@ const ProjectBox = styled.div`
     justify-content: center;
   }
 
-  img {
+  & .web-image {
     width: 100%;
     height: calc(100% - 5px);
+  }
+
+  & .mobile-image {
+    height: calc(100% - 5px);
+    object-fit: contain;
   }
 
   ${MEDIA_QUERIES.TABLET} {

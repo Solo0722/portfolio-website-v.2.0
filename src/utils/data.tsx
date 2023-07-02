@@ -179,7 +179,8 @@ export const projects = [
     tools: ["React Native", "Sanity", "Expo", "NativeBase"],
     url: "",
     github_repo: "https://github.com/solo0722",
-    image_url: "/assets/contaxts.jpg",
+    image_url:
+      "https://ik.imagekit.io/5kwcgtj3iv/images/contaxts.jpg?updatedAt=1688296049841",
     projectType: "mobile",
   },
 
@@ -189,7 +190,8 @@ export const projects = [
     tools: ["React Native", "Sanity", "Expo", "NativeBase"],
     url: "",
     github_repo: "https://github.com/solo0722",
-    image_url: "/assets/deliveroo2.jpg",
+    image_url:
+      "https://ik.imagekit.io/5kwcgtj3iv/images/deliveroo2.jpg?updatedAt=1688296051173",
     projectType: "mobile",
   },
   {
@@ -221,7 +223,8 @@ export const projects = [
     tools: ["React Native", "NewsApi", "Expo", "NativeBase"],
     url: "",
     github_repo: "https://github.com/solo0722",
-    image_url: "/assets/newsapp.jpg",
+    image_url:
+      "https://ik.imagekit.io/5kwcgtj3iv/images/newsapp.jpg?updatedAt=1688296050788",
     projectType: "mobile",
   },
   {
@@ -231,7 +234,8 @@ export const projects = [
     tools: ["Electron", "Html", "Resizer package", "CSS"],
     url: "",
     github_repo: "https://github.com/solo0722",
-    image_url: "/assets/newsapp.jpg",
+    image_url:
+      "https://ik.imagekit.io/5kwcgtj3iv/images/imageresizer.png?updatedAt=1688297005116",
     projectType: "desktop",
   },
 ];
