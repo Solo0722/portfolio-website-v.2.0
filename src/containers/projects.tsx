@@ -106,11 +106,14 @@ const Projects = () => {
                     <div className="textBoxText">
                       <h4>{project.name}</h4>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Dignissimos, cupiditate, odio itaque numquam illo
-                        non voluptatum modi fugit eius ab debitis, odit
-                        recusandae aperiam sapiente iste fuga omnis laboriosam
-                        consequatur.
+                        <span>{project.description}</span>
+                        <br />
+                        <span>
+                          Made with:{" "}
+                          {project.tools.map((tool) => (
+                            <span>{tool},</span>
+                          ))}
+                        </span>
                       </p>
                       <div className="buttons-wrapper">
                         <Button
@@ -246,7 +249,7 @@ const ProjectBox = styled.div`
 
   & .textBox {
     opacity: 1;
-    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+    background-image: linear-gradient(120deg, #e00e27 0%, #f5576c 100%);
     transform: translateY(calc(100% - 5px));
     display: flex;
     flex-direction: column;
@@ -271,6 +274,7 @@ const ProjectBox = styled.div`
   &.textBoxText > h4,
   & .textBoxText > p {
     margin: 0.5rem 0;
+    width: 100%;
   }
 
   & .textBoxText > p {

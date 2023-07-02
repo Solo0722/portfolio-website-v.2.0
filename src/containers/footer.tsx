@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <cite>
-        &copy;2023 - Developed and designed by me | All rights reserved
+        &copy; 2023 - Developed and designed by me | All rights reserved
       </cite>
     </FooterWrapper>
   );

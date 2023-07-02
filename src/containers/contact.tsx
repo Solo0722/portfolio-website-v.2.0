@@ -133,7 +133,7 @@ const Contact = () => {
         <ContactDetailsWrapper>
           <p style={{ lineHeight: "1.6rem" }}>
             Let's make something new, different and more meaningful or make
-            something more visual and conceptual.
+            something more visual and conceptual. I am also available for a job.
           </p>
           <ContactBox>
             <div className="contact-logo">

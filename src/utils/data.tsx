@@ -60,12 +60,6 @@ export const servicesData = [
     endValue: "02",
   },
   {
-    image: <IonIcon iconName="people-outline" />,
-    name: "clients",
-    startValue: "00",
-    endValue: "50",
-  },
-  {
     image: <IonIcon iconName="code-working-outline" />,
     name: "years experience",
     startValue: "00",
@@ -73,10 +67,16 @@ export const servicesData = [
     endIcon: "+",
   },
   {
+    image: <IonIcon iconName="people-outline" />,
+    name: "clients",
+    startValue: "00",
+    endValue: "04",
+  },
+  {
     image: <IonIcon iconName="laptop-outline" />,
     name: "projects",
     startValue: "00",
-    endValue: "80",
+    endValue: "10",
     endIcon: "+",
   },
 ];
@@ -156,7 +156,7 @@ export const projects = [
     name: "Streamline",
     description: "Streamline is a tech blog website",
     tools: ["React", "Sanity"],
-    url: "",
+    url: "https://streamline-one.vercel.app",
     github_repo: "https://github.com/solo0722",
     image_url:
       "https://ik.imagekit.io/5kwcgtj3iv/images/streamline.png?updatedAt=1685980343905",
@@ -166,7 +166,7 @@ export const projects = [
     name: "Moviemix",
     description:
       "Information, Ratings, Reviews and Where to watch the best movies and tv shows.",
-    tools: ["React"],
+    tools: ["React", "TMDB Api"],
     url: "https://moviemix.vercel.app",
     github_repo: "https://github.com/solo0722",
     image_url:
@@ -196,7 +196,7 @@ export const projects = [
     name: "Word Finder",
     description:
       "Word Finder is a dictionary web application with speech recognition features",
-    tools: ["ReactJs"],
+    tools: ["ReactJs", "WordApi"],
     url: "https://wordfinder-gh.netlify.app/",
     github_repo: "https://github.com/solo0722",
     image_url:
@@ -205,8 +205,9 @@ export const projects = [
   },
   {
     name: "Ripple",
-    description: "",
-    tools: ["NextJS"],
+    description:
+      "Ripple is an ecommerce web app for selling phone and its accessories.",
+    tools: ["NextJS", "CommerceJS"],
     url: "https://ripple-sigma.vercel.app/",
     github_repo: "https://github.com/solo0722",
     image_url:
@@ -222,6 +223,16 @@ export const projects = [
     github_repo: "https://github.com/solo0722",
     image_url: "/assets/newsapp.jpg",
     projectType: "mobile",
+  },
+  {
+    name: "Image Resizer",
+    description:
+      "Image Resizer, as the name suggests, is a desktop application built with electronjs for resizing images to any dimensions you want.",
+    tools: ["Electron", "Html", "Resizer package", "CSS"],
+    url: "",
+    github_repo: "https://github.com/solo0722",
+    image_url: "/assets/newsapp.jpg",
+    projectType: "desktop",
   },
 ];
 
