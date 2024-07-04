@@ -104,7 +104,7 @@ export const experienceData = [
           version of the platform.
         </p>
         <p className="experience-animation-text">
-          November 2022 - January 2023
+          September 2023 - January 2024
         </p>
       </ExperienceBox>
     ),
@@ -121,9 +121,7 @@ export const experienceData = [
           on the responsiveness of the application. I also contributed to the
           creation of other important components in the application.
         </p>
-        <p className="experience-animation-text">
-          November 2022 - January 2023
-        </p>
+        <p className="experience-animation-text">October 2022 - January 2023</p>
       </ExperienceBox>
     ),
   },
