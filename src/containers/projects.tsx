@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import TitleBar from "../components/TitleBar";
-import { Button, Spin } from "antd";
+import { Button } from "antd";
 import { MEDIA_QUERIES } from "../utils/constants";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "../utils/data";
@@ -45,7 +45,7 @@ const Projects = () => {
                 type={
                   btn.value.toLowerCase() === activeProjectType
                     ? "primary"
-                    : "ghost"
+                    : "text"
                 }
                 onClick={() => {
                   setActiveProjectType(btn.value);
@@ -67,7 +67,7 @@ const Projects = () => {
                   type={
                     btn.value.toLowerCase() === activeProjectType
                       ? "primary"
-                      : "ghost"
+                      : "text"
                   }
                   onClick={() => {
                     setActiveProjectType(btn.value);
