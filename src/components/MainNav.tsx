@@ -34,9 +34,7 @@ const MainNav = () => {
   }, []);
 
   return (
-    <NavWrapper
-      className={navbar ? "active__menu" : ""}
-    >
+    <NavWrapper className={navbar ? "active__menu" : ""}>
       <LogoWrapper>
         <p className="animation-text">oasolomon.</p>
       </LogoWrapper>
@@ -52,7 +50,7 @@ const MainNav = () => {
           <li className="animation-text">
             <a
               href={
-                "https://ik.imagekit.io/5kwcgtj3iv/images/UpdatedResume.pdf?updatedAt=1685780715527"
+                "https://ik.imagekit.io/5kwcgtj3iv/images/Solomon_Owusu_Ansah_CV.pdf?updatedAt=1720100955055"
               }
               download={true}
               target="_blank"
@@ -68,7 +66,7 @@ const MainNav = () => {
           </li>
         </ul>
       </LinksWrapper>
-      <Drawebar/>
+      <Drawebar />
     </NavWrapper>
   );
 };

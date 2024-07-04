@@ -45,11 +45,6 @@ export const socialMedia = [
     link: "https://github.com/solo0722",
     icon: <IonIcon iconName="logo-github" />,
   },
-  {
-    name: "Twitter",
-    link: "https://twitter.com/@KhobbySolo",
-    icon: <IonIcon iconName="logo-twitter" />,
-  },
 ];
 
 export const servicesData = [
@@ -97,6 +92,23 @@ export const skillsets = [
 ];
 
 export const experienceData = [
+  {
+    children: (
+      <ExperienceBox>
+        <h4 className="experience-animation-text">
+          (Remote Work - Internship) Mobile developer Intern, Asqii LLC.
+        </h4>
+        <p className="experience-animation-text">
+          Worked on "SchoolDesk" which is a mobile application that manages the
+          data of schools such as exams, assessments etc.Worked on the mobile
+          version of the platform.
+        </p>
+        <p className="experience-animation-text">
+          November 2022 - January 2023
+        </p>
+      </ExperienceBox>
+    ),
+  },
   {
     children: (
       <ExperienceBox>

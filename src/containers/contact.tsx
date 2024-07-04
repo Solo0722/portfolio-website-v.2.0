@@ -225,6 +225,7 @@ const FormWrapper = styled.div`
 
   .input-field,
   .message-field {
+    color: white;
     border: none;
     border-radius: 4px;
     padding: 6px;

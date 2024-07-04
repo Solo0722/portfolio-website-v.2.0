@@ -13,23 +13,22 @@ const About = () => {
         <AboutDescription className="about-animation-body">
           <p>
             Hola, I'm <b>Owusu-Ansah Solomon</b>, a self-taught passionate
-            frontend developer with intermediate knowledge on backend
-            development from Ghana. I'm currently studying BSc. Computer
-            Engineering at Kwame Nkrumah University Of Science and Technology in
-            Kumasi,Ghana.I have <b>3+ years</b> experience in frontend
-            development.
+            fullstack software developer as well as a junior data analyst from
+            Ghana. I'm currently studying BSc. Computer Engineering at Kwame
+            Nkrumah University Of Science and Technology in Kumasi,Ghana.I have{" "}
+            <b>4+ years</b> experience in software development.
+          </p>
+          <p>
+            I have proven ability to design, develop, and deploy web
+            applications while leveraging data insights to improve functionality
+            and user experience. I am eager to contribute to a team environment
+            where I can utilize both technical and analytical strengths.
           </p>
           <p>
             I am fueled by my passion for programming and ambition to better
-            myself as a developer. I also consider myself as a "forever
-            student", eager to both build on developing my skills and stay in
-            tune with the latest technological advancement.
-          </p>
-          <p>
-            I am fueled by my passion for programming and ambition to better
-            myself as a developer. I also consider myself as a "forever
-            student", eager to both build on developing my skills and stay in
-            tune with the latest technological advancement.
+            myself as a developer. I consider myself as a "forever student",
+            eager to both build on developing my skills and stay in tune with
+            the latest technological advancement.
           </p>
         </AboutDescription>
         <MyImageWrapper className="about-animation-image-container">

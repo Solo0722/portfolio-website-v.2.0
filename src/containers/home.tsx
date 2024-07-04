@@ -13,8 +13,8 @@ const Home = () => {
           <small className="animation-text">Hey there, I'm</small>
           <h1 className="animation-text">Solomon Owusu-Ansah</h1>
           <p className="desc animation-text">
-            A frontend software developer with intermediate knowledge in backend
-            development. I create beautiful designs only.
+            Highly motivated and results-oriented professional with a combined
+            skillset in full-stack software development and data analysis.
           </p>
           <ButtonsWrapper>
             {socialMedia.map((lk) => (
