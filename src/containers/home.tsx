@@ -33,7 +33,7 @@ const Home = () => {
           <img
             className="animation-text"
             src={
-              "https://ik.imagekit.io/5kwcgtj3iv/images/coder.webp?updatedAt=1685780493080"
+              "https://ik.imagekit.io/5kwcgtj3iv/images/Solomon_Owusu_Ansah_CV.pdf?updatedAt=1729791527555"
             }
             alt="hero-img"
             loading="lazy"

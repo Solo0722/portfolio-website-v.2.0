@@ -163,6 +163,17 @@ export const experienceData = [
 
 export const projects = [
   {
+    name: "CampusEase",
+    description:
+      "Streamline is a service-based mobile platform that connect students on KNUST campus to service providers",
+    tools: ["React", "React Native", "Firebase", "FastApi"],
+    url: "https://campusease.vercel.app",
+    github_repo: "https://github.com/solo0722",
+    image_url:
+      "https://ik.imagekit.io/5kwcgtj3iv/images/Mobile%20Mockup%2009%20(2).png?updatedAt=1729791608684",
+    projectType: "mobile",
+  },
+  {
     name: "Streamline",
     description: "Streamline is a tech blog website",
     tools: ["React", "Sanity"],
